@@ -55,11 +55,12 @@ public class Populacao {
 	 
 	public int getMediaIdadeGeral(){
 		
-		if(this.getMediaIdadeHomem() != 0 && this.getMediaIdadeMulher() != 0){
-			return  (this.getMediaIdadeHomem()+this.getMediaIdadeMulher())/2;
-		}else{
-			return (this.getMediaIdadeHomem()+this.getMediaIdadeMulher());
+		int somaIdadePopulacao=0;
+		
+		for(Pessoa p : pessoas){
+			somaIdadePopulacao += p.getIdade();
 		}
+		return (pessoas.size()!=0)? somaIdadePopulacao/pessoas.size() : 0;
 	}
 	
 	public ArrayList<Pessoa> getPessoa(){
